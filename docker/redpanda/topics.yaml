@@ -1,0 +1,43 @@
+# Topic declarations for the AI Agent Swarm.
+# Applied by bootstrap.sh with `rpk topic create`.
+#
+# partitions: bounds the max parallelism of a consumer group (see spec 5.3)
+# retention_ms: 7 days by default; the DLQ keeps 30 days
+# cleanup_policy: delete (we never compact; PostgreSQL is the durable store)
+
+topics:
+  - name: agent.tasks
+    partitions: 12
+    replicas: 1
+    retention_ms: 604800000
+    cleanup_policy: delete
+
+  - name: agent.results
+    partitions: 12
+    replicas: 1
+    retention_ms: 604800000
+    cleanup_policy: delete
+
+  - name: agent.events
+    partitions: 6
+    replicas: 1
+    retention_ms: 604800000
+    cleanup_policy: delete
+
+  - name: agent.dlq
+    partitions: 6
+    replicas: 1
+    retention_ms: 2592000000
+    cleanup_policy: delete
+
+  - name: integration.github.events
+    partitions: 6
+    replicas: 1
+    retention_ms: 604800000
+    cleanup_policy: delete
+
+  - name: integration.jira.events
+    partitions: 6
+    replicas: 1
+    retention_ms: 604800000
+    cleanup_policy: delete

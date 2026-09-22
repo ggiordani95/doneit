@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+dist/
+build/
+
+# Environment
+.env
+.env.local
+
+# Workspaces created by agent workers
+workspaces/
+.swarm/
+
+# Editors
+.idea/
+.vscode/
+*.swp
+.DS_Store
