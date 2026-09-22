@@ -60,7 +60,7 @@ class _Subscription:
     session_timeout_ms: int
 
 
-class _RebalanceLogger(ConsumerRebalanceListener):
+class _RebalanceLogger(ConsumerRebalanceListener):  # type: ignore[misc]
     """Log partition movement so rebalance storms are visible in the logs."""
 
     def __init__(self, group_id: str) -> None:

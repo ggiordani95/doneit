@@ -109,8 +109,8 @@ def test_partition_key_is_the_run() -> None:
 
 
 def test_topics_are_stable() -> None:
-    assert Topic.TASKS == "agent.tasks"
-    assert Topic.DLQ == "agent.dlq"
+    assert Topic.TASKS.value == "agent.tasks"
+    assert Topic.DLQ.value == "agent.dlq"
     assert len(set(Topic)) == 6
 
 

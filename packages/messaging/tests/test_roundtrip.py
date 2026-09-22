@@ -27,7 +27,7 @@ _RECEIVE_TIMEOUT = 30
 
 
 def _settings() -> BrokerSettings:
-    return BrokerSettings(bootstrap_servers=BOOTSTRAP)  # type: ignore[call-arg]
+    return BrokerSettings(bootstrap_servers=BOOTSTRAP)
 
 
 def _task(run_id: str, *, agent_type: str = "researcher", attempt: int = 1) -> AgentTaskRequested:
